@@ -19,7 +19,7 @@ S {}
 E {}
 B 2 570 -640 1060 -370 {flags=graph
 y1=0
-y2=0.00003
+y2=0.00001
 ypos1=0
 ypos2=2
 divy=5
@@ -68,7 +68,7 @@ N 960 -300 990 -300 {
 lab=GND}
 N 990 -300 990 -290 {
 lab=GND}
-C {devices/vsource.sym} 690 -170 2 0 {name=V1 value=1.125}
+C {devices/vsource.sym} 690 -170 2 0 {name=V1 value=1.2}
 C {devices/vsource.sym} 960 -220 0 0 {name=V2 value=1.8}
 C {devices/gnd.sym} 690 -110 0 0 {name=l1 lab=GND}
 C {devices/lab_wire.sym} 800 -80 0 0 {name=p1 sig_type=std_logic lab=D}
@@ -84,6 +84,7 @@ value="
 .options savecurrents
 .dc v2 0 1.8 0.01
 .control
+*op
   let start_w = 1
   let stop_w = 90
   let delta_w = 5
@@ -111,7 +112,7 @@ descr="W="}
 C {devices/ngspice_get_value.sym} 770 -300 0 1 {name=r1 node=@m.xm1.msky130_fd_pr__nfet_01v8[gm]
 descr="gm="}
 C {sky130_fd_pr/pfet_01v8.sym} 790 -220 0 0 {name=M1
-L=1
+L=2
 W=10
 nf=1
 mult=1
@@ -125,3 +126,7 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {devices/gnd.sym} 990 -290 0 0 {name=l3 lab=GND}
+C {devices/launcher.sym} 110 -100 0 0 {name=h1
+descr="Annotate OP" 
+tclcommand="set show_hidden_texts 1; xschem annotate_op"
+}
