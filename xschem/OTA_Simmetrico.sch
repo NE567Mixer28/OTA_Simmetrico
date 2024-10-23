@@ -1,0 +1,335 @@
+v {xschem version=3.4.5 file_version=1.2
+}
+G {}
+K {}
+V {}
+S {}
+E {}
+B 2 750 -310 1240 -40 {flags=graph
+y1=0
+y2=1.8
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0.36
+x2=2.16
+divx=5
+subdivx=1
+node=v(out)
+color=4
+dataset=-1
+unitx=1
+logx=0
+logy=0
+rainbow=1}
+N 120 -410 560 -410 {
+lab=O}
+N 80 -380 80 -110 {
+lab=O}
+N 600 -380 600 -110 {
+lab=OUT}
+N 80 -480 80 -440 {
+lab=VDD}
+N 80 -480 600 -480 {
+lab=VDD}
+N 600 -480 600 -440 {
+lab=VDD}
+N 80 -50 80 0 {
+lab=GND}
+N 80 -0 600 0 {
+lab=GND}
+N 600 -50 600 -0 {
+lab=GND}
+N 260 -50 260 0 {
+lab=GND}
+N 420 -50 420 0 {
+lab=GND}
+N 120 -80 220 -80 {
+lab=D1}
+N 460 -80 560 -80 {
+lab=D2}
+N 420 -220 420 -110 {
+lab=D2}
+N 260 -220 260 -110 {
+lab=D1}
+N 260 -80 330 -80 {
+lab=GND}
+N 330 -80 330 0 {
+lab=GND}
+N 350 -80 420 -80 {
+lab=GND}
+N 350 -80 350 0 {
+lab=GND}
+N 10 -80 80 -80 {
+lab=GND}
+N 10 -80 10 0 {
+lab=GND}
+N 10 -0 80 0 {
+lab=GND}
+N 600 -80 670 -80 {
+lab=GND}
+N 670 -80 670 0 {
+lab=GND}
+N 600 0 670 0 {
+lab=GND}
+N 260 -320 260 -280 {
+lab=S}
+N 260 -320 420 -320 {
+lab=S}
+N 420 -320 420 -280 {
+lab=S}
+N 340 -330 340 -320 {
+lab=S}
+N 340 -480 340 -390 {
+lab=VDD}
+N 10 -410 80 -410 {
+lab=VDD}
+N 10 -480 10 -410 {
+lab=VDD}
+N 10 -480 80 -480 {
+lab=VDD}
+N 600 -410 670 -410 {
+lab=VDD}
+N 670 -480 670 -410 {
+lab=VDD}
+N 600 -480 670 -480 {
+lab=VDD}
+N 350 -250 420 -250 {
+lab=S}
+N 350 -320 350 -250 {
+lab=S}
+N 260 -250 330 -250 {
+lab=S}
+N 330 -320 330 -250 {
+lab=S}
+N 340 -540 340 -480 {
+lab=VDD}
+N 340 0 340 70 {
+lab=GND}
+N 320 -540 360 -540 {
+lab=VDD}
+N 320 70 360 70 {
+lab=GND}
+N 200 -250 220 -250 {
+lab=IN-}
+N 460 -250 480 -250 {
+lab=IN+}
+N 600 -250 620 -250 {
+lab=OUT}
+N 510 -140 510 -80 {
+lab=D2}
+N 420 -140 460 -140 {
+lab=D2}
+N 460 -140 510 -140 {
+lab=D2}
+N 170 -140 170 -80 {
+lab=D1}
+N 170 -140 260 -140 {
+lab=D1}
+N 80 -350 160 -350 {
+lab=O}
+N 160 -410 160 -380 {
+lab=O}
+N 160 -380 160 -350 {
+lab=O}
+N -300 -410 -300 -370 {
+lab=GND}
+N -400 -390 -400 -360 {
+lab=GND}
+N -400 -480 -400 -450 {
+lab=VDD}
+N -400 -220 -400 -200 {
+lab=Vref}
+N -300 -220 -300 -200 {
+lab=Vref}
+N -400 -300 -400 -280 {
+lab=IN+}
+N -300 -300 -300 -280 {
+lab=IN-}
+N -400 -140 -400 -120 {
+lab=Vref}
+N -400 -60 -400 -40 {
+lab=GND}
+N 250 -180 260 -180 {
+lab=D1}
+N 420 -180 430 -180 {
+lab=D2}
+N 70 -250 80 -250 {
+lab=O}
+N 300 -330 330 -330 {
+lab=S}
+N 330 -330 330 -320 {
+lab=S}
+C {sky130_fd_pr/pfet_01v8.sym} 240 -250 0 0 {name=M1
+L=1
+W=10
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet_01v8.sym} 440 -250 0 1 {name=M2
+L=1
+W=10
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}
+C {sky130_fd_pr/nfet_01v8.sym} 240 -80 0 0 {name=M3
+L=0.15
+W=5
+nf=1 
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
+}
+C {sky130_fd_pr/nfet_01v8.sym} 440 -80 0 1 {name=M4
+L=0.15
+W=5
+nf=1 
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
+}
+C {sky130_fd_pr/nfet_01v8.sym} 580 -80 0 0 {name=M5
+L=0.15
+W=5
+nf=1 
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
+}
+C {sky130_fd_pr/nfet_01v8.sym} 100 -80 0 1 {name=M6
+L=0.15
+W=5
+nf=1 
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet_01v8.sym} 100 -410 0 1 {name=M7
+L=0.15
+W=1
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet_01v8.sym} 580 -410 0 0 {name=M8
+L=0.15
+W=1
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}
+C {devices/isource.sym} 340 -360 0 0 {name=I0 value=10u}
+C {devices/iopin.sym} -210 -500 0 0 {name=p1 lab=VDD}
+C {devices/iopin.sym} -210 -480 0 0 {name=p2 lab=GND}
+C {devices/ipin.sym} 480 -250 0 1 {name=p3 lab=IN+}
+C {devices/ipin.sym} 200 -250 0 0 {name=p4 lab=IN-}
+C {devices/opin.sym} 620 -250 0 0 {name=p5 lab=OUT}
+C {devices/lab_pin.sym} 320 -540 0 0 {name=p6 sig_type=std_logic lab=VDD}
+C {devices/lab_pin.sym} 320 70 0 0 {name=p7 sig_type=std_logic lab=GND}
+C {devices/simulator_commands_shown.sym} -840 -480 0 0 {name=COMMANDS
+simulator=ngspice
+only_toplevel=false 
+value="
+* ngspice commands
+.param W=1
+.options savecurrents
+.dc Vbias 0 1.8 0.1 VbiasR 1.8 0 0.1
+.control
+  let start_w = 1
+  let stop_w = 90
+  let delta_w = 5
+  let w_act = start_w
+  while w_act le stop_w
+    alterparam W = $&w_act
+    reset
+    save all
+    *save @m.xm1.msky130_fd_pr__nfet_01v8[gm]
+    *save @m.xm1.msky130_fd_pr__nfet_01v8[W] 
+    run
+    remzerovec
+    write OTA_Simmetrico.raw
+    let w_act = w_act + delta_w
+    set appendwrite
+  end
+plot v(out)
+.endc
+"}
+C {sky130_fd_pr/corner.sym} -970 -510 0 0 {name=CORNER only_toplevel=false corner=tt}
+C {devices/vsource.sym} -400 -420 0 0 {name=V1 value=1.8 savecurrent=false}
+C {devices/gnd.sym} -300 -370 0 0 {name=l1 lab=GND}
+C {devices/lab_pin.sym} -300 -410 0 1 {name=p8 sig_type=std_logic lab=GND}
+C {devices/lab_pin.sym} -400 -360 0 1 {name=p9 sig_type=std_logic lab=GND}
+C {devices/lab_pin.sym} -400 -480 0 0 {name=p10 sig_type=std_logic lab=VDD}
+C {devices/vsource.sym} -400 -250 0 0 {name=Vbias value=0 savecurrent=false}
+C {devices/vsource.sym} -300 -250 0 0 {name=VbiasR value=0 savecurrent=false}
+C {devices/lab_pin.sym} -400 -200 0 0 {name=p11 sig_type=std_logic lab=Vref}
+C {devices/lab_pin.sym} -300 -200 0 0 {name=p12 sig_type=std_logic lab=Vref}
+C {devices/lab_pin.sym} -300 -300 0 0 {name=p13 sig_type=std_logic lab=IN-}
+C {devices/lab_pin.sym} -400 -300 0 0 {name=p14 sig_type=std_logic lab=IN+}
+C {devices/vsource.sym} -400 -90 0 0 {name=V2 value=0.9 savecurrent=false}
+C {devices/lab_pin.sym} -400 -40 0 0 {name=p15 sig_type=std_logic lab=GND}
+C {devices/lab_pin.sym} -400 -140 0 0 {name=p16 sig_type=std_logic lab=Vref}
+C {devices/lab_wire.sym} 250 -180 0 0 {name=p17 sig_type=std_logic lab=D1}
+C {devices/lab_wire.sym} 430 -180 0 1 {name=p18 sig_type=std_logic lab=D2}
+C {devices/lab_wire.sym} 70 -250 0 0 {name=p19 sig_type=std_logic lab=O}
+C {devices/lab_wire.sym} 300 -330 0 0 {name=p20 sig_type=std_logic lab=S}
+C {devices/launcher.sym} 820 -20 0 0 {name=h5
+descr="load waves" 
+tclcommand="xschem raw_read $netlist_dir/OTA_Simmetrico.raw dc"
+}
