@@ -68,7 +68,7 @@ N 960 -300 990 -300 {
 lab=GND}
 N 990 -300 990 -290 {
 lab=GND}
-C {devices/vsource.sym} 690 -170 2 0 {name=V1 value=1.2}
+C {devices/vsource.sym} 690 -170 2 0 {name=V1 value=1}
 C {devices/vsource.sym} 960 -220 0 0 {name=V2 value=1.8}
 C {devices/gnd.sym} 690 -110 0 0 {name=l1 lab=GND}
 C {devices/lab_wire.sym} 800 -80 0 0 {name=p1 sig_type=std_logic lab=D}
@@ -103,7 +103,7 @@ value="
   end
 .endc
 "}
-C {devices/launcher.sym} 640 -350 0 0 {name=h5
+C {devices/launcher.sym} 650 -350 0 0 {name=h5
 descr="load waves" 
 tclcommand="xschem raw_read $netlist_dir/Polarizzazione_Pmos.raw dc"
 }
@@ -112,8 +112,8 @@ descr="W="}
 C {devices/ngspice_get_value.sym} 770 -300 0 1 {name=r1 node=@m.xm1.msky130_fd_pr__nfet_01v8[gm]
 descr="gm="}
 C {sky130_fd_pr/pfet_01v8.sym} 790 -220 0 0 {name=M1
-L=2
-W=10
+L=0.15
+W=5
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
