@@ -13,8 +13,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=1.3877788e-17
-x2=1.8
+x1=0.18
+x2=1.98
 divx=5
 subdivx=1
 node=v(out)
@@ -26,10 +26,6 @@ logy=0
 rainbow=1}
 N 120 -410 560 -410 {
 lab=O}
-N 80 -380 80 -110 {
-lab=O}
-N 600 -380 600 -110 {
-lab=OUT}
 N 80 -480 80 -440 {
 lab=VDD}
 N 80 -480 600 -480 {
@@ -156,9 +152,19 @@ N 260 -220 260 -210 {
 lab=#net2}
 N 260 -150 260 -110 {
 lab=G3}
+N 600 -160 600 -110 {
+lab=#net3}
+N 600 -380 600 -220 {
+lab=OUT}
+N 80 -150 80 -110 {
+lab=#net4}
+N 80 -380 80 -210 {
+lab=O}
+N 670 0 690 -0 {
+lab=GND}
 C {sky130_fd_pr/pfet_01v8.sym} 240 -250 0 0 {name=M1
 L=2
-W=10
+W=2
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -172,7 +178,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8.sym} 440 -250 0 1 {name=M2
 L=2
-W=10
+W=2
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -185,8 +191,8 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 240 -80 0 0 {name=M3
-L=0.15
-W=2
+L=2.1
+W=2.1
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -199,8 +205,8 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 440 -80 0 1 {name=M4
-L=0.15
-W=2
+L=2.1
+W=2.1
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -213,8 +219,8 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 580 -80 0 0 {name=M5
-L=0.15
-W=4
+L=2.1
+W=4.2
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -227,8 +233,8 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 100 -80 0 1 {name=M6
-L=0.15
-W=4
+L=2.1
+W=4.2
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -241,8 +247,8 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8.sym} 100 -410 0 1 {name=M7
-L=1
-W=1
+L=2.1
+W=1.4
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -255,8 +261,8 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8.sym} 580 -410 0 0 {name=M8
-L=1
-W=1
+L=2.1
+W=1.4
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -282,9 +288,11 @@ value="
 .param W=1
 .param L=1
 .options savecurrents
-.dc Vbias 0 1.8 0.1 VbiasR 1.8 0 0.1
+*.dc Vbias 0 1.8 0.1 VbiasR 1.8 0 0.1
 .control
-*op
+
+op
+
   let start_w = 1
   let stop_w = 90
   let delta_w = 5
@@ -302,28 +310,12 @@ value="
     set appendwrite
   end
 
-  let start_l = 1
-  let stop_l= 90
-  let delta_l = 5
-  let l_act = start_l
-  while l_act le stop_l
-    alterparam L = $&l_act
-    reset
-    save all
-    *save @m.xm1.msky130_fd_pr__nfet_01v8[gm]
-    *save @m.xm1.msky130_fd_pr__nfet_01v8[W] 
-    run
-    remzerovec
-    write OTA_Simmetrico.raw
-    let l_act = l_act + delta_l
-    set appendwrite
-  end
 
 plot v(out)
 plot deriv(v(out))
 *plot i(vmeas)
 *plot i(vmeas1)
-
+plot i(vmeas4)
 .endc
 "}
 C {sky130_fd_pr/corner.sym} -970 -510 0 0 {name=CORNER only_toplevel=false corner=tt}
@@ -357,3 +349,5 @@ C {devices/lab_wire.sym} 320 -540 0 0 {name=p6 sig_type=std_logic lab=VDD}
 C {devices/lab_wire.sym} 320 70 0 0 {name=p7 sig_type=std_logic lab=GND}
 C {devices/lab_wire.sym} 510 -80 0 1 {name=p17 sig_type=std_logic lab=G4}
 C {devices/lab_wire.sym} 170 -80 0 0 {name=p18 sig_type=std_logic lab=G3}
+C {devices/ammeter.sym} 600 -190 0 0 {name=Vmeas2 savecurrent=true}
+C {devices/ammeter.sym} 80 -180 0 0 {name=Vmeas3 savecurrent=true}

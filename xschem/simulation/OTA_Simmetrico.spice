@@ -5,21 +5,21 @@
 *.ipin IN+
 *.ipin IN-
 *.opin OUT
-XM1 net2 IN- S S sky130_fd_pr__pfet_01v8 L=2 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
+XM1 net2 IN- S S sky130_fd_pr__pfet_01v8 L=2 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XM2 net1 IN+ S S sky130_fd_pr__pfet_01v8 L=2 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
+XM2 net1 IN+ S S sky130_fd_pr__pfet_01v8 L=2 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XM3 G3 G3 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
+XM3 G3 G3 GND GND sky130_fd_pr__nfet_01v8 L=2.1 W=2.1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XM4 G4 G4 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
+XM4 G4 G4 GND GND sky130_fd_pr__nfet_01v8 L=2.1 W=2.1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XM5 OUT G4 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
+XM5 net3 G4 GND GND sky130_fd_pr__nfet_01v8 L=2.1 W=4.2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XM6 O G3 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
+XM6 net4 G3 GND GND sky130_fd_pr__nfet_01v8 L=2.1 W=4.2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XM7 O O VDD VDD sky130_fd_pr__pfet_01v8 L=1 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
+XM7 O O VDD VDD sky130_fd_pr__pfet_01v8 L=2.1 W=1.4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XM8 OUT O VDD VDD sky130_fd_pr__pfet_01v8 L=1 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
+XM8 OUT O VDD VDD sky130_fd_pr__pfet_01v8 L=2.1 W=1.4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
 I0 VDD S 12u
 V1 VDD GND 1.8
@@ -30,6 +30,10 @@ Vmeas net2 G3 0
 .save i(vmeas)
 Vmeas1 net1 G4 0
 .save i(vmeas1)
+Vmeas2 OUT net3 0
+.save i(vmeas2)
+Vmeas3 O net4 0
+.save i(vmeas3)
 **** begin user architecture code
 
 
@@ -38,9 +42,11 @@ Vmeas1 net1 G4 0
 .param W=1
 .param L=1
 .options savecurrents
-.dc Vbias 0 1.8 0.1 VbiasR 1.8 0 0.1
+*.dc Vbias 0 1.8 0.1 VbiasR 1.8 0 0.1
 .control
-*op
+
+op
+
   let start_w = 1
   let stop_w = 90
   let delta_w = 5
@@ -58,28 +64,12 @@ Vmeas1 net1 G4 0
     set appendwrite
   end
 
-  let start_l = 1
-  let stop_l= 90
-  let delta_l = 5
-  let l_act = start_l
-  while l_act le stop_l
-    alterparam L = $&l_act
-    reset
-    save all
-    *save @m.xm1.msky130_fd_pr__nfet_01v8[gm]
-    *save @m.xm1.msky130_fd_pr__nfet_01v8[W]
-    run
-    remzerovec
-    write OTA_Simmetrico.raw
-    let l_act = l_act + delta_l
-    set appendwrite
-  end
 
 plot v(out)
 plot deriv(v(out))
 *plot i(vmeas)
 *plot i(vmeas1)
-
+plot i(vmeas4)
 .endc
 
 
