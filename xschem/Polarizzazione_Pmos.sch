@@ -82,25 +82,10 @@ value="
 * ngspice commands
 .param W=1
 .options savecurrents
-.dc v2 0 1.8 0.01
+
 .control
-*op
-  let start_w = 1
-  let stop_w = 90
-  let delta_w = 5
-  let w_act = start_w
-  while w_act le stop_w
-    alterparam W = $&w_act
-    reset
-    save all
-    save @m.xm1.msky130_fd_pr__nfet_01v8[gm]
-    save @m.xm1.msky130_fd_pr__nfet_01v8[W] 
-    run
-    remzerovec
-    write Polarizzazione_Pmos.raw
-    let w_act = w_act + delta_w
-    set appendwrite
-  end
+op
+ *dc v1 0 1.8 0.01
 .endc
 "}
 C {devices/launcher.sym} 650 -360 0 0 {name=h5

@@ -288,10 +288,10 @@ value="
 .param W=1
 .param L=1
 .options savecurrents
-.dc Vbias 0 1.8 0.1 VbiasR 1.8 0 0.1
+*.dc Vbias 0 1.8 0.1 VbiasR 1.8 0 0.1
 .control
 
-*op
+op
 
   let start_w = 1
   let stop_w = 90
