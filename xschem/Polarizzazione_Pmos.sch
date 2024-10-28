@@ -19,7 +19,7 @@ S {}
 E {}
 B 2 570 -640 1060 -370 {flags=graph
 y1=0
-y2=0.00001
+y2=0.000002
 ypos1=0
 ypos2=2
 divy=5
@@ -103,7 +103,7 @@ value="
   end
 .endc
 "}
-C {devices/launcher.sym} 650 -350 0 0 {name=h5
+C {devices/launcher.sym} 650 -360 0 0 {name=h5
 descr="load waves" 
 tclcommand="xschem raw_read $netlist_dir/Polarizzazione_Pmos.raw dc"
 }
@@ -112,8 +112,8 @@ descr="W="}
 C {devices/ngspice_get_value.sym} 770 -300 0 1 {name=r1 node=@m.xm1.msky130_fd_pr__nfet_01v8[gm]
 descr="gm="}
 C {sky130_fd_pr/pfet_01v8.sym} 790 -220 0 0 {name=M1
-L=0.15
-W=5
+L=0.5
+W=1
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
