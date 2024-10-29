@@ -19,14 +19,14 @@ S {}
 E {}
 B 2 570 -640 1060 -370 {flags=graph
 y1=0
-y2=0.000002
+y2=0.00002
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=1.3877788e-17
-x2=1.8
+x1=1
+x2=1.25
 divx=5
 subdivx=1
 node=i(@m.xm1.msky130_fd_pr__pfet_01v8[id])
@@ -68,7 +68,7 @@ N 960 -300 990 -300 {
 lab=GND}
 N 990 -300 990 -290 {
 lab=GND}
-C {devices/vsource.sym} 690 -170 2 0 {name=V1 value=1.05}
+C {devices/vsource.sym} 690 -170 2 0 {name=V1 value=1.155}
 C {devices/vsource.sym} 960 -220 0 0 {name=V2 value=1.8}
 C {devices/gnd.sym} 690 -110 0 0 {name=l1 lab=GND}
 C {devices/lab_wire.sym} 800 -80 0 0 {name=p1 sig_type=std_logic lab=D}

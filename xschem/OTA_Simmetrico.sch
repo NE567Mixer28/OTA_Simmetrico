@@ -6,15 +6,15 @@ V {}
 S {}
 E {}
 B 2 750 -310 1240 -40 {flags=graph
-y1=0.36
-y2=2.16
+y1=0
+y2=1.8
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-0.09
-x2=1.71
+x1=0.7
+x2=1.2
 divx=5
 subdivx=1
 node="v(out)
@@ -135,9 +135,9 @@ lab=GND}
 N -400 -480 -400 -450 {
 lab=VDD}
 N -400 -220 -400 -200 {
-lab=Vref}
+lab=GND}
 N -300 -220 -300 -200 {
-lab=Vref}
+lab=GND}
 N -400 -300 -400 -280 {
 lab=IN+}
 N -300 -300 -300 -280 {
@@ -158,10 +158,6 @@ N 80 -150 80 -110 {
 lab=#net4}
 N 80 -380 80 -210 {
 lab=O}
-N -400 -80 -400 -60 {
-lab=GND}
-N -400 -160 -400 -140 {
-lab=Vref}
 C {sky130_fd_pr/pfet_01v8.sym} 240 -250 0 0 {name=M1
 L=1
 W=10
@@ -298,12 +294,13 @@ save @m.xm3.msky130_fd_pr__nfet_01v8[gm]
 save @m.xm6.msky130_fd_pr__nfet_01v8[gm]
 save @m.xm4.msky130_fd_pr__nfet_01v8[gm]
 save @m.xm5.msky130_fd_pr__nfet_01v8[gm]
-   *op
-   *remzerovec 
-   *write OTA_Simmetrico.raw
-   dc Vbias 0 1.8 0.01 VbiasR 1.8 0 0.01
-   plot v(out)
-   plot deriv(v(out))
+   op
+   remzerovec 
+   
+   *dc Vbias 0.7 1.2 0.001 
+   *plot v(out),v(in+)
+   *plot deriv(v(out))
+   
    write OTA_Simmetrico.raw
 .endc
 
@@ -332,12 +329,9 @@ C {devices/lab_wire.sym} 510 -80 0 1 {name=p17 sig_type=std_logic lab=G4}
 C {devices/lab_wire.sym} 170 -80 0 0 {name=p18 sig_type=std_logic lab=G3}
 C {devices/ammeter.sym} 600 -190 0 0 {name=Vmeas2 savecurrent=true}
 C {devices/ammeter.sym} 80 -180 0 0 {name=Vmeas3 savecurrent=true}
-C {devices/vsource.sym} -400 -110 0 0 {name=Vref value=0.9 savecurrent=false}
-C {devices/lab_pin.sym} -400 -60 0 1 {name=p15 sig_type=std_logic lab=GND}
-C {devices/lab_pin.sym} -400 -160 0 1 {name=p16 sig_type=std_logic lab=Vref}
-C {devices/lab_pin.sym} -400 -200 0 1 {name=p11 sig_type=std_logic lab=Vref}
 C {devices/launcher.sym} 810 -340 0 0 {name=h1
 descr="Annotate OP" 
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
-C {devices/lab_pin.sym} -300 -200 0 1 {name=p12 sig_type=std_logic lab=Vref}
+C {devices/lab_pin.sym} -400 -200 0 1 {name=p11 sig_type=std_logic lab=GND}
+C {devices/lab_pin.sym} -300 -200 0 1 {name=p12 sig_type=std_logic lab=GND}
