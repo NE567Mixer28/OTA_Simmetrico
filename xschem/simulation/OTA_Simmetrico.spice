@@ -9,19 +9,19 @@ XM1 net2 IN- S S sky130_fd_pr__pfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf 
 + ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
 XM2 net1 IN+ S S sky130_fd_pr__pfet_01v8 L=1 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XM3 G3 G3 GND GND sky130_fd_pr__nfet_01v8 L=1 W=15 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
+XM3 G3 G3 GND GND sky130_fd_pr__nfet_01v8 L=2 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XM4 G4 G4 GND GND sky130_fd_pr__nfet_01v8 L=1 W=15 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
+XM4 G4 G4 GND GND sky130_fd_pr__nfet_01v8 L=2 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XM5 net3 G4 GND GND sky130_fd_pr__nfet_01v8 L=1 W=30 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
+XM5 net3 G4 GND GND sky130_fd_pr__nfet_01v8 L=2 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XM6 net4 G3 GND GND sky130_fd_pr__nfet_01v8 L=1 W=30 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
+XM6 net4 G3 GND GND sky130_fd_pr__nfet_01v8 L=2 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XM7 O O VDD VDD sky130_fd_pr__pfet_01v8 L=1 W=30 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
+XM7 O O VDD VDD sky130_fd_pr__pfet_01v8 L=0.5 W=50 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XM8 OUT O VDD VDD sky130_fd_pr__pfet_01v8 L=1 W=50 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
+XM8 OUT O VDD VDD sky130_fd_pr__pfet_01v8 L=0.5 W=50 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-I0 VDD S 10u
+I0 VDD S 4u
 V1 VDD GND 1.8
 Vbias IN+ Vref 0.9
 VbiasR IN- Vref 0.9
@@ -33,44 +33,34 @@ Vmeas2 OUT net3 0
 .save i(vmeas2)
 Vmeas3 O net4 0
 .save i(vmeas3)
-Vref Vref GND 0
+Vref Vref GND 0.9
 **** begin user architecture code
 
 
 
 * ngspice commands
-.param W=1
-.param L=1
+
 .options savecurrents
-*.dc Vbias 0 1.8 0.1 VbiasR 1.8 0 0.1
+
 .control
-
-op
-
-  let start_w = 1
-  let stop_w = 90
-  let delta_w = 5
-  let w_act = start_w
-  while w_act le stop_w
-    alterparam W = $&w_act
-    reset
-    save all
-    *save @m.xm1.msky130_fd_pr__nfet_01v8[gm]
-    *save @m.xm1.msky130_fd_pr__nfet_01v8[W]
-    run
-    remzerovec
-    write OTA_Simmetrico.raw
-    let w_act = w_act + delta_w
-    set appendwrite
-  end
-
-
-plot v(out)
-plot deriv(v(out))
-*plot i(vmeas)
-*plot i(vmeas1)
-plot i(vmeas4)
+save all
+save @m.xm1.msky130_fd_pr__pfet_01v8[gm]
+save @m.xm2.msky130_fd_pr__pfet_01v8[gm]
+save @m.xm7.msky130_fd_pr__pfet_01v8[gm]
+save @m.xm8.msky130_fd_pr__pfet_01v8[gm]
+save @m.xm3.msky130_fd_pr__nfet_01v8[gm]
+save @m.xm6.msky130_fd_pr__nfet_01v8[gm]
+save @m.xm4.msky130_fd_pr__nfet_01v8[gm]
+save @m.xm5.msky130_fd_pr__nfet_01v8[gm]
+   *op
+   *remzerovec
+   *write OTA_Simmetrico.raw
+   dc Vbias 0 1.8 0.01 VbiasR 1.8 0 0.01
+   plot v(out)
+   plot deriv(v(out))
+   write OTA_Simmetrico.raw
 .endc
+
 
 
 

@@ -68,27 +68,27 @@ N 960 -300 990 -300 {
 lab=GND}
 N 990 -300 990 -290 {
 lab=GND}
-C {devices/vsource.sym} 690 -170 2 0 {name=V1 value=1}
+C {devices/vsource.sym} 690 -170 2 0 {name=V1 value=1.05}
 C {devices/vsource.sym} 960 -220 0 0 {name=V2 value=1.8}
 C {devices/gnd.sym} 690 -110 0 0 {name=l1 lab=GND}
 C {devices/lab_wire.sym} 800 -80 0 0 {name=p1 sig_type=std_logic lab=D}
 C {devices/lab_wire.sym} 740 -220 0 0 {name=p2 sig_type=std_logic lab=G}
-C {sky130_fd_pr/corner.sym} 1060 -210 0 0 {name=CORNER only_toplevel=false corner=tt}
 C {devices/title.sym} 160 -30 0 0 {name=l2 author="Stefan Schippers"}
 C {devices/simulator_commands_shown.sym} 10 -600 0 0 {name=COMMANDS
 simulator=ngspice
 only_toplevel=false 
 value="
 * ngspice commands
-.param W=1
-.options savecurrents
 
+.options savecurrents
+.dc v1 0 1.8 0.01
 .control
-op
- *dc v1 0 1.8 0.01
+*op
+
+  
 .endc
 "}
-C {devices/launcher.sym} 650 -360 0 0 {name=h5
+C {devices/launcher.sym} 650 -350 0 0 {name=h5
 descr="load waves" 
 tclcommand="xschem raw_read $netlist_dir/Polarizzazione_Pmos.raw dc"
 }
@@ -115,3 +115,4 @@ C {devices/launcher.sym} 110 -100 0 0 {name=h1
 descr="Annotate OP" 
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
+C {sky130_fd_pr/corner.sym} 320 -240 0 0 {name=CORNER only_toplevel=true corner=tt}

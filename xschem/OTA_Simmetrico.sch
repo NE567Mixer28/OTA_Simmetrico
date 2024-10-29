@@ -6,15 +6,15 @@ V {}
 S {}
 E {}
 B 2 750 -310 1240 -40 {flags=graph
-y1=0
-y2=1.8
+y1=0.36
+y2=2.16
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
-x2=1.8
+x1=-0.09
+x2=1.71
 divx=5
 subdivx=1
 node="v(out)
@@ -191,8 +191,8 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 240 -80 0 0 {name=M3
-L=1
-W=15
+L=2
+W=0.5
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -205,8 +205,8 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 440 -80 0 1 {name=M4
-L=1
-W=15
+L=2
+W=0.5
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -219,8 +219,8 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 580 -80 0 0 {name=M5
-L=1
-W=30
+L=2
+W=1
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -233,8 +233,8 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 100 -80 0 1 {name=M6
-L=1
-W=30
+L=2
+W=1
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -247,21 +247,7 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8.sym} 100 -410 0 1 {name=M7
-L=1
-W=30
-nf=1
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=pfet_01v8
-spiceprefix=X
-}
-C {sky130_fd_pr/pfet_01v8.sym} 580 -410 0 0 {name=M8
-L=1
+L=0.5
 W=50
 nf=1
 mult=1
@@ -274,51 +260,55 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {devices/isource.sym} 340 -360 0 0 {name=I0 value=10u}
+C {sky130_fd_pr/pfet_01v8.sym} 580 -410 0 0 {name=M8
+L=0.5
+W=50
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}
+C {devices/isource.sym} 340 -360 0 0 {name=I0 value=4u}
 C {devices/iopin.sym} -210 -500 0 0 {name=p1 lab=VDD}
-C {devices/iopin.sym} -210 -480 0 0 {name=p2 lab=GND}
+C {devices/iopin.sym} -210 -470 0 0 {name=p2 lab=GND}
 C {devices/ipin.sym} 480 -250 0 1 {name=p3 lab=IN+}
 C {devices/ipin.sym} 200 -250 0 0 {name=p4 lab=IN-}
 C {devices/opin.sym} 620 -250 0 0 {name=p5 lab=OUT}
-C {devices/simulator_commands_shown.sym} -840 -480 0 0 {name=COMMANDS
+C {devices/simulator_commands_shown.sym} -1030 -390 0 0 {name=COMMANDS
 simulator=ngspice
 only_toplevel=false 
 value="
 * ngspice commands
-.param W=1
-.param L=1
+
 .options savecurrents
-*.dc Vbias 0 1.8 0.1 VbiasR 1.8 0 0.1
+
 .control
-
-op
-
-  let start_w = 1
-  let stop_w = 90
-  let delta_w = 5
-  let w_act = start_w
-  while w_act le stop_w
-    alterparam W = $&w_act
-    reset
-    save all
-    *save @m.xm1.msky130_fd_pr__nfet_01v8[gm]
-    *save @m.xm1.msky130_fd_pr__nfet_01v8[W] 
-    run
-    remzerovec
-    write OTA_Simmetrico.raw
-    let w_act = w_act + delta_w
-    set appendwrite
-  end
-
-
-plot v(out)
-plot deriv(v(out))
-*plot i(vmeas)
-*plot i(vmeas1)
-plot i(vmeas4)
+save all
+save @m.xm1.msky130_fd_pr__pfet_01v8[gm]
+save @m.xm2.msky130_fd_pr__pfet_01v8[gm]
+save @m.xm7.msky130_fd_pr__pfet_01v8[gm]
+save @m.xm8.msky130_fd_pr__pfet_01v8[gm]
+save @m.xm3.msky130_fd_pr__nfet_01v8[gm]
+save @m.xm6.msky130_fd_pr__nfet_01v8[gm]
+save @m.xm4.msky130_fd_pr__nfet_01v8[gm]
+save @m.xm5.msky130_fd_pr__nfet_01v8[gm]
+   *op
+   *remzerovec 
+   *write OTA_Simmetrico.raw
+   dc Vbias 0 1.8 0.01 VbiasR 1.8 0 0.01
+   plot v(out)
+   plot deriv(v(out))
+   write OTA_Simmetrico.raw
 .endc
+
 "}
-C {sky130_fd_pr/corner.sym} -970 -510 0 0 {name=CORNER only_toplevel=false corner=tt}
+C {sky130_fd_pr/corner.sym} -1150 -420 0 0 {name=CORNER only_toplevel=false corner=tt}
 C {devices/vsource.sym} -400 -420 0 0 {name=V1 value=1.8 savecurrent=false}
 C {devices/gnd.sym} -300 -370 0 0 {name=l1 lab=GND}
 C {devices/lab_pin.sym} -300 -410 0 1 {name=p8 sig_type=std_logic lab=GND}
@@ -342,12 +332,12 @@ C {devices/lab_wire.sym} 510 -80 0 1 {name=p17 sig_type=std_logic lab=G4}
 C {devices/lab_wire.sym} 170 -80 0 0 {name=p18 sig_type=std_logic lab=G3}
 C {devices/ammeter.sym} 600 -190 0 0 {name=Vmeas2 savecurrent=true}
 C {devices/ammeter.sym} 80 -180 0 0 {name=Vmeas3 savecurrent=true}
-C {devices/vsource.sym} -400 -110 0 0 {name=Vref value=0 savecurrent=false}
+C {devices/vsource.sym} -400 -110 0 0 {name=Vref value=0.9 savecurrent=false}
 C {devices/lab_pin.sym} -400 -60 0 1 {name=p15 sig_type=std_logic lab=GND}
 C {devices/lab_pin.sym} -400 -160 0 1 {name=p16 sig_type=std_logic lab=Vref}
 C {devices/lab_pin.sym} -400 -200 0 1 {name=p11 sig_type=std_logic lab=Vref}
-C {devices/lab_pin.sym} -300 -200 0 1 {name=p12 sig_type=std_logic lab=Vref}
-C {devices/launcher.sym} -490 80 0 0 {name=h1
+C {devices/launcher.sym} 810 -340 0 0 {name=h1
 descr="Annotate OP" 
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
+C {devices/lab_pin.sym} -300 -200 0 1 {name=p12 sig_type=std_logic lab=Vref}
