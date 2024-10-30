@@ -297,7 +297,7 @@ save @m.xm5.msky130_fd_pr__nfet_01v8[gm]
    op
    remzerovec 
    
-   *dc Vbias 0.7 1.2 0.001 
+   *dc Vbias 0 1.8 0.001 
    *plot v(out),v(in+)
    *plot deriv(v(out))
    

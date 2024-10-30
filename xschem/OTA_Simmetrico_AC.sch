@@ -5,6 +5,76 @@ K {}
 V {}
 S {}
 E {}
+B 2 -90 -250 460 0 {flags=graph,unlocked
+y1=-200
+y2=41
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=-0.091947015
+x2=6.0762635
+
+subdivx=8
+node="\\"out db20()\\""
+color=4
+dataset=0
+unitx=1
+logx=1
+logy=0
+divx=5
+sweep=""
+rawfile=$netlist_dir/test_ac.raw
+sim_type=ac}
+B 2 -90 -820 460 -500 {flags=graph,unlocked
+y1=0
+
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=9.1603685
+
+
+
+
+dataset=0
+unitx=1
+logx=0
+logy=0
+divx=5
+hilight_wave=-1
+rawfile=$netlist_dir/test_ac.raw
+sim_type=tran
+subdivx=3
+color=4
+node=out
+y2=1.8}
+B 2 -90 -500 460 -250 {flags=graph,unlocked
+rawfile=$netlist_dir/test_ac.raw
+sim_type=ac
+y1=-200
+y2=180
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=5.1510322
+x2=11.319244
+
+subdivx=8
+node=ph(out)
+color=4
+dataset=0
+unitx=1
+logx=1
+logy=0
+divx=5
+sweep=""}
 N -770 -410 -330 -410 {
 lab=O}
 N -810 -480 -810 -440 {
@@ -89,7 +159,7 @@ N -690 -250 -670 -250 {
 lab=IN-}
 N -430 -250 -410 -250 {
 lab=IN+}
-N -290 -250 -270 -250 {
+N -180 -250 -160 -250 {
 lab=OUT}
 N -380 -140 -380 -80 {
 lab=G4}
@@ -116,27 +186,35 @@ lab=VDD}
 N -1290 -220 -1290 -200 {
 lab=GND}
 N -1190 -220 -1190 -200 {
-lab=GND}
+lab=#net1}
 N -1290 -300 -1290 -280 {
 lab=IN+}
 N -1190 -300 -1190 -280 {
 lab=IN-}
 N -470 -220 -470 -210 {
-lab=#net1}
+lab=#net2}
 N -470 -150 -470 -110 {
 lab=G4}
 N -630 -220 -630 -210 {
-lab=#net2}
+lab=#net3}
 N -630 -150 -630 -110 {
 lab=G3}
 N -290 -160 -290 -110 {
-lab=#net3}
+lab=#net4}
 N -290 -380 -290 -220 {
 lab=OUT}
 N -810 -150 -810 -110 {
-lab=#net4}
+lab=#net5}
 N -810 -380 -810 -210 {
 lab=O}
+N -290 -250 -180 -250 {
+lab=OUT}
+N -210 -250 -210 -240 {
+lab=OUT}
+N -210 -180 -210 -170 {
+lab=GND}
+N -1190 -140 -1190 -90 {
+lab=GND}
 C {sky130_fd_pr/pfet_01v8.sym} -650 -250 0 0 {name=M1
 L=1
 W=10
@@ -254,16 +332,16 @@ C {devices/iopin.sym} -1100 -500 0 0 {name=p1 lab=VDD}
 C {devices/iopin.sym} -1100 -470 0 0 {name=p2 lab=GND}
 C {devices/ipin.sym} -410 -250 0 1 {name=p3 lab=IN+}
 C {devices/ipin.sym} -690 -250 0 0 {name=p4 lab=IN-}
-C {devices/opin.sym} -270 -250 0 0 {name=p5 lab=OUT}
+C {devices/opin.sym} -160 -250 0 0 {name=p5 lab=OUT}
 C {sky130_fd_pr/corner.sym} -2070 -420 0 0 {name=CORNER only_toplevel=false corner=tt}
 C {devices/vsource.sym} -1290 -420 0 0 {name=V1 value=1.8 savecurrent=false}
 C {devices/gnd.sym} -1190 -370 0 0 {name=l1 lab=GND}
 C {devices/lab_pin.sym} -1190 -410 0 1 {name=p8 sig_type=std_logic lab=GND}
 C {devices/lab_pin.sym} -1290 -360 0 1 {name=p9 sig_type=std_logic lab=GND}
 C {devices/lab_pin.sym} -1290 -480 0 0 {name=p10 sig_type=std_logic lab=VDD}
-C {devices/vsource.sym} -1290 -250 0 0 {name=Vbias value=0.88 savecurrent=false}
+C {devices/vsource.sym} -1290 -250 0 0 {name=Vbias value=0.9 savecurrent=false}
 C {devices/vsource.sym} -1190 -250 0 0 {name=VbiasR value="0 ac 1 0
-+ sin(0 1m 1T 0 0 0)"}
++ sin(0 1m 100 0 0 0)"}
 C {devices/lab_pin.sym} -1190 -300 0 0 {name=p13 sig_type=std_logic lab=IN-}
 C {devices/lab_pin.sym} -1290 -300 0 0 {name=p14 sig_type=std_logic lab=IN+}
 C {devices/lab_wire.sym} -810 -250 0 0 {name=p19 sig_type=std_logic lab=O}
@@ -277,7 +355,7 @@ C {devices/lab_wire.sym} -720 -80 0 0 {name=p18 sig_type=std_logic lab=G3}
 C {devices/ammeter.sym} -290 -190 0 0 {name=Vmeas2 savecurrent=true}
 C {devices/ammeter.sym} -810 -180 0 0 {name=Vmeas3 savecurrent=true}
 C {devices/lab_pin.sym} -1290 -200 0 1 {name=p11 sig_type=std_logic lab=GND}
-C {devices/lab_pin.sym} -1190 -200 0 1 {name=p12 sig_type=std_logic lab=GND}
+C {devices/lab_pin.sym} -1190 -90 0 1 {name=p12 sig_type=std_logic lab=GND}
 C {devices/simulator_commands_shown.sym} -1930 -390 0 0 {name=COMMANDS1
 simulator=ngspice
 only_toplevel=false 
@@ -311,10 +389,16 @@ C {devices/launcher.sym} -1540 -200 0 0 {name=h2
 descr="Load/unload
 TRAN waveforms" 
 tclcommand="
-xschem raw_read $netlist_dir/OTA_Simmetrico_AC.raw tran
-"
+xschem raw_read $netlist_dir/OTA_Simmetrico_AC.raw tran"
 }
 C {devices/launcher.sym} -1540 -310 0 0 {name=h6
 descr="Annotate OP" 
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
+C {devices/capa.sym} -210 -210 0 0 {name=C1
+m=1
+value=2p
+footprint=1206
+device="ceramic capacitor"}
+C {devices/gnd.sym} -210 -170 0 0 {name=l2 lab=GND}
+C {devices/vsource.sym} -1190 -170 0 0 {name=Vbias1 value=0.9 savecurrent=false}
