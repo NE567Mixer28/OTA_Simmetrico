@@ -158,10 +158,46 @@ N 80 -150 80 -110 {
 lab=#net4}
 N 80 -380 80 -210 {
 lab=O}
+N 180 -360 300 -360 {
+lab=O1}
+N 180 -360 180 -320 {
+lab=O1}
+N -20 -320 180 -320 {
+lab=O1}
+N -60 -480 -60 -350 {
+lab=VDD}
+N -60 -480 10 -480 {
+lab=VDD}
+N -60 -290 -60 -250 {
+lab=O1}
+N -60 0 10 0 {
+lab=GND}
+N -120 -320 -60 -320 {
+lab=VDD}
+N -130 -320 -120 -320 {
+lab=VDD}
+N -130 -370 -130 -320 {
+lab=VDD}
+N -130 -370 -60 -370 {
+lab=VDD}
+N 340 -360 410 -360 {
+lab=VDD}
+N 410 -400 410 -360 {
+lab=VDD}
+N 340 -400 410 -400 {
+lab=VDD}
+N -60 -250 -60 -180 {
+lab=O1}
+N -60 -120 -60 0 {
+lab=GND}
+N -60 -250 -0 -250 {
+lab=O1}
+N 0 -320 -0 -250 {
+lab=O1}
 C {sky130_fd_pr/pfet_01v8.sym} 240 -250 0 0 {name=M1
 L=1
 W=10
-nf=1
+nf=10
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
@@ -175,7 +211,7 @@ spiceprefix=X
 C {sky130_fd_pr/pfet_01v8.sym} 440 -250 0 1 {name=M2
 L=1
 W=10
-nf=1
+nf=10
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
@@ -187,8 +223,8 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 240 -80 0 0 {name=M3
-L=2
-W=0.5
+L=10
+W=1
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -201,8 +237,8 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 440 -80 0 1 {name=M4
-L=2
-W=0.5
+L=10
+W=1
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -215,8 +251,8 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 580 -80 0 0 {name=M5
-L=2
-W=1
+L=10
+W=2
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -229,8 +265,8 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 100 -80 0 1 {name=M6
-L=2
-W=1
+L=10
+W=2
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -244,7 +280,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8.sym} 100 -410 0 1 {name=M7
 L=0.5
-W=50
+W=90
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -258,7 +294,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8.sym} 580 -410 0 0 {name=M8
 L=0.5
-W=50
+W=90
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -270,7 +306,6 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {devices/isource.sym} 340 -360 0 0 {name=I0 value=4u}
 C {devices/iopin.sym} -210 -500 0 0 {name=p1 lab=VDD}
 C {devices/iopin.sym} -210 -470 0 0 {name=p2 lab=GND}
 C {devices/ipin.sym} 480 -250 0 1 {name=p3 lab=IN+}
@@ -294,12 +329,12 @@ save @m.xm3.msky130_fd_pr__nfet_01v8[gm]
 save @m.xm6.msky130_fd_pr__nfet_01v8[gm]
 save @m.xm4.msky130_fd_pr__nfet_01v8[gm]
 save @m.xm5.msky130_fd_pr__nfet_01v8[gm]
-   op
-   remzerovec 
+   *op
+   *remzerovec 
    
-   *dc Vbias 0 1.8 0.001 
-   *plot v(out),v(in+)
-   *plot deriv(v(out))
+   dc Vbias 0.8 1 0.001 
+   plot v(out),v(in+)
+   plot deriv(v(out))
    
    write OTA_Simmetrico.raw
 .endc
@@ -329,9 +364,43 @@ C {devices/lab_wire.sym} 510 -80 0 1 {name=p17 sig_type=std_logic lab=G4}
 C {devices/lab_wire.sym} 170 -80 0 0 {name=p18 sig_type=std_logic lab=G3}
 C {devices/ammeter.sym} 600 -190 0 0 {name=Vmeas2 savecurrent=true}
 C {devices/ammeter.sym} 80 -180 0 0 {name=Vmeas3 savecurrent=true}
-C {devices/launcher.sym} 810 -340 0 0 {name=h1
+C {devices/launcher.sym} -380 -140 0 0 {name=h1
 descr="Annotate OP" 
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
 C {devices/lab_pin.sym} -400 -200 0 1 {name=p11 sig_type=std_logic lab=GND}
 C {devices/lab_pin.sym} -300 -200 0 1 {name=p12 sig_type=std_logic lab=GND}
+C {sky130_fd_pr/pfet_01v8.sym} 320 -360 0 0 {name=M9
+L=90
+W=90
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet_01v8.sym} -40 -320 0 1 {name=M10
+L=90
+W=90
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}
+C {devices/res.sym} -60 -150 0 0 {name=R1
+value=20k
+footprint=1206
+device=resistor
+m=1}
+C {devices/lab_wire.sym} -60 -250 0 0 {name=p15 sig_type=std_logic lab=O1}
