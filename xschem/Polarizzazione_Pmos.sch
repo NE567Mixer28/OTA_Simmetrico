@@ -17,25 +17,6 @@ K {}
 V {}
 S {}
 E {}
-B 2 570 -640 1060 -370 {flags=graph
-y1=0
-y2=0.00002
-ypos1=0
-ypos2=2
-divy=5
-subdivy=1
-unity=1
-x1=0
-x2=1.8
-divx=5
-subdivx=1
-node=i(@m.xm1.msky130_fd_pr__pfet_01v8[id])
-color=4
-dataset=-1
-unitx=1
-logx=0
-logy=0
-rainbow=1}
 N 810 -220 910 -220 {
 lab=GND}
 N 690 -220 690 -200 {
@@ -81,10 +62,10 @@ value="
 * ngspice commands
 
 .options savecurrents
-.dc v1 0 1.8 0.01
+.dc v2 0 1.8 0.01
 .control
 *op
-
+write Polarizzazione_Pmos.raw
   
 .endc
 "}
@@ -97,9 +78,9 @@ descr="W="}
 C {devices/ngspice_get_value.sym} 770 -300 0 1 {name=r1 node=@m.xm1.msky130_fd_pr__nfet_01v8[gm]
 descr="gm="}
 C {sky130_fd_pr/pfet_01v8.sym} 790 -220 0 0 {name=M1
-L=1
+L=2
 W=10
-nf=1
+nf=10
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
@@ -115,4 +96,4 @@ C {devices/launcher.sym} 110 -100 0 0 {name=h1
 descr="Annotate OP" 
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
-C {sky130_fd_pr/corner.sym} 320 -240 0 0 {name=CORNER only_toplevel=true corner=tt}
+C {sky130_fd_pr/corner.sym} 30 -370 0 0 {name=CORNER only_toplevel=true corner=tt}
